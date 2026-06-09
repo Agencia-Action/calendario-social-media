@@ -3,28 +3,38 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Calendário de Publicações — Social Media | Action+</title>
+<title>Calendário de Publicações — Action+</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0d0d12;
-    --surface: #16161f;
-    --surface-2: #1e1e2b;
-    --border: #2a2a3a;
-    --text: #f4f4f8;
-    --muted: #9a9ab0;
-    --accent: #6c5ce7;
-    --c-hype: #e84393;
-    --c-schmidt: #00b894;
-    --c-fed: #0984e3;
-    --shadow: 0 10px 40px rgba(0,0,0,.45);
-    --radius: 16px;
+    /* Paleta oficial Action+ (Brandbook v1.0) */
+    --action-green: #91FF56;   /* verde vivo — destaque principal */
+    --strategy-green: #4DC149; /* verde estratégia */
+    --dark-blue: #042D46;
+    --very-dark-blue: #0C2335;
+    --almost-black: #00121D;
+    --really-dark-blue: #000B11;
+    --light-blue: #A3C6D5;
+    --very-light-blue: #D4EBF9;
+    --really-light-blue: #EEF7FF;
+    --white: #FFFFFF;
+
+    --bg: var(--almost-black);
+    --surface: var(--very-dark-blue);
+    --surface-2: var(--dark-blue);
+    --border: #18415c;
+    --text: var(--really-light-blue);
+    --muted: #7fa6bb;
+    --accent: var(--action-green);
+    --radius: 14px;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: radial-gradient(1200px 600px at 80% -10%, rgba(108,92,231,.18), transparent),
-                radial-gradient(1000px 500px at -10% 110%, rgba(232,67,147,.12), transparent),
-                var(--bg);
+    font-family: "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
     color: var(--text);
     min-height: 100vh;
     line-height: 1.5;
@@ -32,124 +42,134 @@
   .wrap { max-width: 1480px; margin: 0 auto; padding: 40px 32px 80px; }
 
   /* Header */
-  header { text-align: center; margin-bottom: 40px; }
-  .brand {
-    display: inline-flex; align-items: center; gap: 10px;
-    font-weight: 700; letter-spacing: .5px; color: var(--muted);
-    text-transform: uppercase; font-size: 13px; margin-bottom: 18px;
-  }
-  .brand .dot { width: 10px; height: 10px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent), var(--c-hype)); }
-  h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 800; line-height: 1.1; }
-  h1 span { background: linear-gradient(135deg, #a29bfe, var(--c-hype));
-    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-  .subtitle { color: var(--muted); margin-top: 12px; font-size: 16px; }
+  header { margin-bottom: 36px; }
+  .topbar { display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 16px; margin-bottom: 36px; }
+  .logo { font-family: "Clash Display", "Inter", sans-serif; font-weight: 600;
+    font-size: 30px; letter-spacing: -.5px; color: var(--white); line-height: 1; }
+  .logo .plus { color: var(--action-green); }
+  .topbar .tag { font-size: 12px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--muted); }
+
+  .hero { border-left: 4px solid var(--action-green); padding-left: 22px; }
+  h1 { font-size: clamp(30px, 5vw, 48px); font-weight: 800; line-height: 1.05;
+    color: var(--white); letter-spacing: -1px; }
+  h1 .accent { color: var(--action-green); }
+  .subtitle { color: var(--muted); margin-top: 12px; font-size: 16px; max-width: 620px; }
 
   /* Legend */
-  .legend { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;
-    margin: 28px 0 8px; }
-  .legend-item { display: flex; align-items: center; gap: 8px; font-size: 14px;
-    color: var(--muted); }
+  .legend { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 24px; padding-left: 26px; }
+  .legend-item { display: flex; align-items: center; gap: 9px; font-size: 14px;
+    color: var(--text); font-weight: 500; }
   .swatch { width: 14px; height: 14px; border-radius: 4px; }
 
   /* Calendar */
   .cal-card { background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px;
-    margin-top: 24px; }
+    border-radius: var(--radius); padding: 28px; margin-top: 28px; }
   .cal-head { display: flex; align-items: center; justify-content: space-between;
-    margin-bottom: 20px; }
-  .cal-head h2 { font-size: 22px; font-weight: 700; }
+    margin-bottom: 22px; }
+  .cal-head h2 { font-size: 24px; font-weight: 700; color: var(--white);
+    letter-spacing: -.3px; }
   .cal-nav { display: flex; gap: 8px; }
-  .cal-nav button { background: var(--surface-2); border: 1px solid var(--border);
-    color: var(--text); width: 38px; height: 38px; border-radius: 10px; cursor: pointer;
+  .cal-nav button { background: transparent; border: 1px solid var(--border);
+    color: var(--text); width: 40px; height: 40px; border-radius: 10px; cursor: pointer;
     font-size: 18px; transition: .15s; }
-  .cal-nav button:hover { background: var(--accent); border-color: var(--accent); }
+  .cal-nav button:hover { background: var(--action-green); border-color: var(--action-green);
+    color: var(--almost-black); }
 
-  .weekdays { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px;
-    margin-bottom: 8px; }
-  .weekdays div { text-align: center; font-size: 12px; font-weight: 600;
-    color: var(--muted); text-transform: uppercase; letter-spacing: .5px; padding: 6px 0; }
+  .weekdays { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px;
+    margin-bottom: 10px; }
+  .weekdays div { text-align: center; font-size: 12px; font-weight: 700;
+    color: var(--muted); text-transform: uppercase; letter-spacing: 1px; padding: 6px 0; }
 
-  .grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+  .grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
   .cell { background: var(--surface-2); border: 1px solid var(--border);
-    border-radius: 12px; min-height: 170px; padding: 10px; display: flex;
+    border-radius: 12px; min-height: 170px; padding: 11px; display: flex;
     flex-direction: column; gap: 6px; }
-  .cell.empty { background: transparent; border: 1px dashed rgba(255,255,255,.05); }
-  .cell.today { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+  .cell.empty { background: transparent; border: 1px dashed rgba(127,166,187,.18); }
+  .cell.today { border-color: var(--action-green);
+    box-shadow: 0 0 0 1px var(--action-green) inset; }
   .cell .num { font-size: 13px; font-weight: 700; color: var(--muted); }
-  .cell.today .num { color: #a29bfe; }
+  .cell.today .num { color: var(--action-green); }
 
-  .event { display: block; text-decoration: none; color: #fff; font-size: 12px;
-    font-weight: 600; padding: 6px 8px; border-radius: 7px; line-height: 1.3;
+  .event { display: block; text-decoration: none; font-size: 12px;
+    font-weight: 600; padding: 7px 9px; border-radius: 8px; line-height: 1.3;
     cursor: pointer; transition: transform .12s, filter .12s; word-break: break-word; }
-  .event:hover { transform: translateY(-1px) scale(1.02); filter: brightness(1.12); }
-  .event small { display: block; font-weight: 500; opacity: .85; font-size: 10px; }
-  .ev-hype { background: linear-gradient(135deg, var(--c-hype), #b33072); }
-  .ev-schmidt { background: linear-gradient(135deg, var(--c-schmidt), #00866b); }
-  .ev-fed { background: linear-gradient(135deg, var(--c-fed), #0b5fa6); }
-  .badge { display:inline-block; font-size:9px; padding:1px 5px; border-radius:5px;
-    background: rgba(0,0,0,.28); margin-top:3px; }
+  .event:hover { transform: translateY(-1px); filter: brightness(1.08); }
+  .event small { display: block; font-weight: 600; opacity: .8; font-size: 10.5px;
+    margin-top: 2px; }
 
   /* List section */
-  .list-section { margin-top: 48px; }
-  .list-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 18px; }
+  .section-title { display: flex; align-items: center; gap: 12px; margin: 50px 0 20px; }
+  .section-title h2 { font-size: 24px; font-weight: 700; color: var(--white);
+    letter-spacing: -.3px; }
+  .section-title .bar { width: 26px; height: 4px; background: var(--action-green);
+    border-radius: 4px; }
   .posts { display: grid; gap: 12px; }
   .post-card { display: flex; align-items: center; gap: 16px; text-decoration: none;
     background: var(--surface); border: 1px solid var(--border);
-    border-radius: 14px; padding: 16px 18px; color: var(--text); transition: .15s; }
-  .post-card:hover { border-color: var(--accent); transform: translateX(4px);
-    background: var(--surface-2); }
+    border-radius: 12px; padding: 16px 18px; color: var(--text); transition: .15s; }
+  .post-card:hover { border-color: var(--action-green); transform: translateX(4px); }
   .post-date { text-align: center; min-width: 56px; }
-  .post-date .d { font-size: 22px; font-weight: 800; }
-  .post-date .m { font-size: 11px; color: var(--muted); text-transform: uppercase; }
-  .post-bar { width: 4px; align-self: stretch; border-radius: 4px; }
+  .post-date .d { font-size: 24px; font-weight: 800; color: var(--white); }
+  .post-date .m { font-size: 11px; color: var(--muted); text-transform: uppercase;
+    font-weight: 700; letter-spacing: .5px; }
+  .post-bar { width: 4px; align-self: stretch; border-radius: 4px; min-height: 44px; }
   .post-body { flex: 1; min-width: 0; }
   .post-client { font-size: 13px; font-weight: 700; }
-  .post-title { font-size: 14px; color: var(--text); margin-top: 2px; }
-  .post-meta { font-size: 12px; color: var(--muted); margin-top: 4px;
-    display: flex; gap: 10px; flex-wrap: wrap; }
-  .tag { padding: 2px 9px; border-radius: 20px; font-size: 11px; font-weight: 600; }
-  .tag.fmt { background: rgba(108,92,231,.18); color: #b9aefc; }
-  .tag.pub { background: rgba(0,184,148,.16); color: #4ee0bb; }
-  .tag.agd { background: rgba(253,203,110,.16); color: #fdcb6e; }
+  .post-title { font-size: 15px; color: var(--white); margin-top: 2px; font-weight: 500; }
+  .post-meta { font-size: 12px; color: var(--muted); margin-top: 6px;
+    display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .tag { padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+  .tag.fmt { background: rgba(145,255,86,.12); color: var(--action-green); }
+  .tag.pub { background: rgba(145,255,86,.16); color: var(--action-green); }
+  .tag.agd { background: rgba(163,198,213,.16); color: var(--light-blue); }
   .ig-icon { width: 26px; height: 26px; flex-shrink: 0; color: var(--muted); }
-  .post-card:hover .ig-icon { color: #fff; }
+  .post-card:hover .ig-icon { color: var(--action-green); }
 
   /* Clients */
-  .clients { margin-top: 48px; }
-  .clients h2 { font-size: 22px; font-weight: 700; margin-bottom: 18px; }
-  .client-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  .client-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
     gap: 14px; }
   .client-card { display: flex; align-items: center; gap: 12px; text-decoration: none;
-    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
     padding: 16px; color: var(--text); transition: .15s; }
-  .client-card:hover { transform: translateY(-3px); border-color: var(--accent);
-    box-shadow: var(--shadow); }
-  .avatar { width: 44px; height: 44px; border-radius: 50%; display: grid;
-    place-items: center; font-weight: 800; color: #fff; flex-shrink: 0; }
-  .client-card .name { font-size: 14px; font-weight: 700; }
+  .client-card:hover { transform: translateY(-3px); border-color: var(--action-green); }
+  .avatar { width: 46px; height: 46px; border-radius: 12px; display: grid;
+    place-items: center; font-weight: 800; font-size: 18px; flex-shrink: 0; }
+  .client-card .name { font-size: 14px; font-weight: 700; color: var(--white); }
   .client-card .handle { font-size: 12px; color: var(--muted); }
 
-  footer { text-align: center; margin-top: 56px; color: var(--muted); font-size: 13px; }
+  footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+    gap: 10px; color: var(--muted); font-size: 13px; }
+  footer .site { color: var(--action-green); font-weight: 700;
+    font-family: "Clash Display","Inter",sans-serif; letter-spacing: .3px; }
 
   @media (max-width: 720px) {
-    .cell { min-height: 110px; }
+    .wrap { padding: 28px 18px 60px; }
+    .cell { min-height: 110px; padding: 8px; }
     .cell .num { font-size: 11px; }
-    .event { font-size: 10.5px; }
+    .event { font-size: 10.5px; padding: 5px 7px; }
     .weekdays div { font-size: 10px; }
+    .legend { padding-left: 0; }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div class="brand"><span class="dot"></span> Action+ · Social Media</div>
-    <h1>Calendário de <span>Publicações</span></h1>
-    <p class="subtitle">Clique em qualquer publicação para abrir o Instagram do cliente.</p>
+    <div class="topbar">
+      <div class="logo">Action<span class="plus">+</span></div>
+      <div class="tag">Social Media · Calendário de Conteúdo</div>
+    </div>
+    <div class="hero">
+      <h1>Calendário de <span class="accent">Publicações</span></h1>
+      <p class="subtitle">Clique em qualquer publicação para abrir o Instagram do cliente. Clareza na visão, método na execução.</p>
+    </div>
     <div class="legend">
-      <div class="legend-item"><span class="swatch" style="background:var(--c-hype)"></span> Academia Hype</div>
-      <div class="legend-item"><span class="swatch" style="background:var(--c-schmidt)"></span> Porcelana Schmidt</div>
-      <div class="legend-item"><span class="swatch" style="background:var(--c-fed)"></span> Fed. Paranaense Futsal</div>
+      <div class="legend-item"><span class="swatch" style="background:#91FF56"></span> Academia Hype</div>
+      <div class="legend-item"><span class="swatch" style="background:#A3C6D5"></span> Porcelana Schmidt</div>
+      <div class="legend-item"><span class="swatch" style="background:#2E6E9E"></span> Fed. Paranaense Futsal</div>
     </div>
   </header>
 
@@ -167,28 +187,26 @@
     <div class="grid" id="calGrid"></div>
   </section>
 
-  <section class="list-section">
-    <h2>Próximas publicações</h2>
-    <div class="posts" id="postsList"></div>
-  </section>
+  <div class="section-title"><span class="bar"></span><h2>Próximas publicações</h2></div>
+  <div class="posts" id="postsList"></div>
 
-  <section class="clients">
-    <h2>Clientes ativos</h2>
-    <div class="client-grid" id="clientGrid"></div>
-  </section>
+  <div class="section-title"><span class="bar"></span><h2>Clientes ativos</h2></div>
+  <div class="client-grid" id="clientGrid"></div>
 
-  <footer>Action+ · Tráfego pago & social media — atualizado em 09/06/2026</footer>
+  <footer>
+    <span>Action+ · Assessoria de crescimento empresarial — atualizado em 09/06/2026</span>
+    <span class="site">agenciaaction.com</span>
+  </footer>
 </div>
 
 <script>
-  // ---- Dados ----
+  // ---- Cores dos clientes (harmonizadas à paleta Action+) ----
   const clients = {
-    hype:    { name: "Academia Hype", handle: "@academia_hype", url: "https://www.instagram.com/academia_hype/", cls: "hype", color: "#e84393" },
-    schmidt: { name: "Porcelana Schmidt", handle: "@porcelanaschmidt", url: "https://www.instagram.com/porcelanaschmidt/", cls: "schmidt", color: "#00b894" },
-    fed:     { name: "Fed. Paranaense Futsal", handle: "@federacaoparanaensedefutsal", url: "https://www.instagram.com/federacaoparanaensedefutsal/", cls: "fed", color: "#0984e3" },
+    hype:    { name: "Academia Hype", handle: "@academia_hype", url: "https://www.instagram.com/academia_hype/", cls: "hype", color: "#91FF56", text: "#00121D" },
+    schmidt: { name: "Porcelana Schmidt", handle: "@porcelanaschmidt", url: "https://www.instagram.com/porcelanaschmidt/", cls: "schmidt", color: "#A3C6D5", text: "#00121D" },
+    fed:     { name: "Fed. Paranaense Futsal", handle: "@federacaoparanaensedefutsal", url: "https://www.instagram.com/federacaoparanaensedefutsal/", cls: "fed", color: "#2E6E9E", text: "#FFFFFF" },
   };
 
-  // date: "AAAA-MM-DD"
   const posts = [
     { date: "2026-06-08", time: "18:30", client: "schmidt", title: "Textura que permanece", format: "Estático", status: "Publicado" },
     { date: "2026-06-09", time: "14:50", client: "hype",    title: "Memórias", format: "Carrossel", status: "Publicado" },
@@ -202,8 +220,7 @@
   const MESES = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
   const MES_ABR = ["JAN","FEV","MAR","ABR","MAI","JUN","JUL","AGO","SET","OUT","NOV","DEZ"];
   const TODAY = "2026-06-09";
-
-  let viewYear = 2026, viewMonth = 5; // Junho (0-index)
+  let viewYear = 2026, viewMonth = 5;
 
   function postsByDate(y, m, d) {
     const key = `${y}-${String(m+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
@@ -216,26 +233,20 @@
     grid.innerHTML = "";
     const firstDay = new Date(viewYear, viewMonth, 1).getDay();
     const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
-
     for (let i = 0; i < firstDay; i++) {
-      const e = document.createElement("div");
-      e.className = "cell empty";
-      grid.appendChild(e);
+      const e = document.createElement("div"); e.className = "cell empty"; grid.appendChild(e);
     }
     for (let d = 1; d <= daysInMonth; d++) {
-      const cell = document.createElement("div");
-      cell.className = "cell";
+      const cell = document.createElement("div"); cell.className = "cell";
       const key = `${viewYear}-${String(viewMonth+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
       if (key === TODAY) cell.classList.add("today");
-      const num = document.createElement("div");
-      num.className = "num";
-      num.textContent = d;
+      const num = document.createElement("div"); num.className = "num"; num.textContent = d;
       cell.appendChild(num);
-
       postsByDate(viewYear, viewMonth, d).forEach(p => {
         const c = clients[p.client];
         const a = document.createElement("a");
-        a.className = `event ev-${c.cls}`;
+        a.className = "event";
+        a.style.background = c.color; a.style.color = c.text;
         a.href = c.url; a.target = "_blank"; a.rel = "noopener";
         a.title = `${c.name} — ${p.title} (${p.format}, ${p.status})`;
         a.innerHTML = `${p.title}<small>${p.time} · ${p.format}</small>`;
@@ -281,7 +292,7 @@
       a.className = "client-card";
       a.href = c.url; a.target = "_blank"; a.rel = "noopener";
       a.innerHTML = `
-        <div class="avatar" style="background:${c.color}">${c.name.charAt(0)}</div>
+        <div class="avatar" style="background:${c.color};color:${c.text}">${c.name.charAt(0)}</div>
         <div><div class="name">${c.name}</div><div class="handle">${c.handle}</div></div>`;
       grid.appendChild(a);
     });
@@ -298,9 +309,7 @@
     viewMonth++; if (viewMonth > 11) { viewMonth = 0; viewYear++; } renderCalendar();
   };
 
-  renderCalendar();
-  renderPosts();
-  renderClients();
+  renderCalendar(); renderPosts(); renderClients();
 </script>
 </body>
 </html>
