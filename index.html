@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Calendário de Publicações — Social Media | Action+</title>
+<style>
+  :root {
+    --bg: #0d0d12;
+    --surface: #16161f;
+    --surface-2: #1e1e2b;
+    --border: #2a2a3a;
+    --text: #f4f4f8;
+    --muted: #9a9ab0;
+    --accent: #6c5ce7;
+    --c-hype: #e84393;
+    --c-schmidt: #00b894;
+    --c-fed: #0984e3;
+    --shadow: 0 10px 40px rgba(0,0,0,.45);
+    --radius: 16px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: radial-gradient(1200px 600px at 80% -10%, rgba(108,92,231,.18), transparent),
+                radial-gradient(1000px 500px at -10% 110%, rgba(232,67,147,.12), transparent),
+                var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 1480px; margin: 0 auto; padding: 40px 32px 80px; }
+
+  /* Header */
+  header { text-align: center; margin-bottom: 40px; }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-weight: 700; letter-spacing: .5px; color: var(--muted);
+    text-transform: uppercase; font-size: 13px; margin-bottom: 18px;
+  }
+  .brand .dot { width: 10px; height: 10px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--c-hype)); }
+  h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 800; line-height: 1.1; }
+  h1 span { background: linear-gradient(135deg, #a29bfe, var(--c-hype));
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .subtitle { color: var(--muted); margin-top: 12px; font-size: 16px; }
+
+  /* Legend */
+  .legend { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;
+    margin: 28px 0 8px; }
+  .legend-item { display: flex; align-items: center; gap: 8px; font-size: 14px;
+    color: var(--muted); }
+  .swatch { width: 14px; height: 14px; border-radius: 4px; }
+
+  /* Calendar */
+  .cal-card { background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px;
+    margin-top: 24px; }
+  .cal-head { display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 20px; }
+  .cal-head h2 { font-size: 22px; font-weight: 700; }
+  .cal-nav { display: flex; gap: 8px; }
+  .cal-nav button { background: var(--surface-2); border: 1px solid var(--border);
+    color: var(--text); width: 38px; height: 38px; border-radius: 10px; cursor: pointer;
+    font-size: 18px; transition: .15s; }
+  .cal-nav button:hover { background: var(--accent); border-color: var(--accent); }
+
+  .weekdays { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px;
+    margin-bottom: 8px; }
+  .weekdays div { text-align: center; font-size: 12px; font-weight: 600;
+    color: var(--muted); text-transform: uppercase; letter-spacing: .5px; padding: 6px 0; }
+
+  .grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+  .cell { background: var(--surface-2); border: 1px solid var(--border);
+    border-radius: 12px; min-height: 170px; padding: 10px; display: flex;
+    flex-direction: column; gap: 6px; }
+  .cell.empty { background: transparent; border: 1px dashed rgba(255,255,255,.05); }
+  .cell.today { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+  .cell .num { font-size: 13px; font-weight: 700; color: var(--muted); }
+  .cell.today .num { color: #a29bfe; }
+
+  .event { display: block; text-decoration: none; color: #fff; font-size: 12px;
+    font-weight: 600; padding: 6px 8px; border-radius: 7px; line-height: 1.3;
+    cursor: pointer; transition: transform .12s, filter .12s; word-break: break-word; }
+  .event:hover { transform: translateY(-1px) scale(1.02); filter: brightness(1.12); }
+  .event small { display: block; font-weight: 500; opacity: .85; font-size: 10px; }
+  .ev-hype { background: linear-gradient(135deg, var(--c-hype), #b33072); }
+  .ev-schmidt { background: linear-gradient(135deg, var(--c-schmidt), #00866b); }
+  .ev-fed { background: linear-gradient(135deg, var(--c-fed), #0b5fa6); }
+  .badge { display:inline-block; font-size:9px; padding:1px 5px; border-radius:5px;
+    background: rgba(0,0,0,.28); margin-top:3px; }
+
+  /* List section */
+  .list-section { margin-top: 48px; }
+  .list-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 18px; }
+  .posts { display: grid; gap: 12px; }
+  .post-card { display: flex; align-items: center; gap: 16px; text-decoration: none;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 16px 18px; color: var(--text); transition: .15s; }
+  .post-card:hover { border-color: var(--accent); transform: translateX(4px);
+    background: var(--surface-2); }
+  .post-date { text-align: center; min-width: 56px; }
+  .post-date .d { font-size: 22px; font-weight: 800; }
+  .post-date .m { font-size: 11px; color: var(--muted); text-transform: uppercase; }
+  .post-bar { width: 4px; align-self: stretch; border-radius: 4px; }
+  .post-body { flex: 1; min-width: 0; }
+  .post-client { font-size: 13px; font-weight: 700; }
+  .post-title { font-size: 14px; color: var(--text); margin-top: 2px; }
+  .post-meta { font-size: 12px; color: var(--muted); margin-top: 4px;
+    display: flex; gap: 10px; flex-wrap: wrap; }
+  .tag { padding: 2px 9px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+  .tag.fmt { background: rgba(108,92,231,.18); color: #b9aefc; }
+  .tag.pub { background: rgba(0,184,148,.16); color: #4ee0bb; }
+  .tag.agd { background: rgba(253,203,110,.16); color: #fdcb6e; }
+  .ig-icon { width: 26px; height: 26px; flex-shrink: 0; color: var(--muted); }
+  .post-card:hover .ig-icon { color: #fff; }
+
+  /* Clients */
+  .clients { margin-top: 48px; }
+  .clients h2 { font-size: 22px; font-weight: 700; margin-bottom: 18px; }
+  .client-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 14px; }
+  .client-card { display: flex; align-items: center; gap: 12px; text-decoration: none;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    padding: 16px; color: var(--text); transition: .15s; }
+  .client-card:hover { transform: translateY(-3px); border-color: var(--accent);
+    box-shadow: var(--shadow); }
+  .avatar { width: 44px; height: 44px; border-radius: 50%; display: grid;
+    place-items: center; font-weight: 800; color: #fff; flex-shrink: 0; }
+  .client-card .name { font-size: 14px; font-weight: 700; }
+  .client-card .handle { font-size: 12px; color: var(--muted); }
+
+  footer { text-align: center; margin-top: 56px; color: var(--muted); font-size: 13px; }
+
+  @media (max-width: 720px) {
+    .cell { min-height: 110px; }
+    .cell .num { font-size: 11px; }
+    .event { font-size: 10.5px; }
+    .weekdays div { font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><span class="dot"></span> Action+ · Social Media</div>
+    <h1>Calendário de <span>Publicações</span></h1>
+    <p class="subtitle">Clique em qualquer publicação para abrir o Instagram do cliente.</p>
+    <div class="legend">
+      <div class="legend-item"><span class="swatch" style="background:var(--c-hype)"></span> Academia Hype</div>
+      <div class="legend-item"><span class="swatch" style="background:var(--c-schmidt)"></span> Porcelana Schmidt</div>
+      <div class="legend-item"><span class="swatch" style="background:var(--c-fed)"></span> Fed. Paranaense Futsal</div>
+    </div>
+  </header>
+
+  <section class="cal-card">
+    <div class="cal-head">
+      <h2 id="calTitle">Junho 2026</h2>
+      <div class="cal-nav">
+        <button id="prevBtn" aria-label="Mês anterior">‹</button>
+        <button id="nextBtn" aria-label="Próximo mês">›</button>
+      </div>
+    </div>
+    <div class="weekdays">
+      <div>Dom</div><div>Seg</div><div>Ter</div><div>Qua</div><div>Qui</div><div>Sex</div><div>Sáb</div>
+    </div>
+    <div class="grid" id="calGrid"></div>
+  </section>
+
+  <section class="list-section">
+    <h2>Próximas publicações</h2>
+    <div class="posts" id="postsList"></div>
+  </section>
+
+  <section class="clients">
+    <h2>Clientes ativos</h2>
+    <div class="client-grid" id="clientGrid"></div>
+  </section>
+
+  <footer>Action+ · Tráfego pago & social media — atualizado em 09/06/2026</footer>
+</div>
+
+<script>
+  // ---- Dados ----
+  const clients = {
+    hype:    { name: "Academia Hype", handle: "@academia_hype", url: "https://www.instagram.com/academia_hype/", cls: "hype", color: "#e84393" },
+    schmidt: { name: "Porcelana Schmidt", handle: "@porcelanaschmidt", url: "https://www.instagram.com/porcelanaschmidt/", cls: "schmidt", color: "#00b894" },
+    fed:     { name: "Fed. Paranaense Futsal", handle: "@federacaoparanaensedefutsal", url: "https://www.instagram.com/federacaoparanaensedefutsal/", cls: "fed", color: "#0984e3" },
+  };
+
+  // date: "AAAA-MM-DD"
+  const posts = [
+    { date: "2026-06-08", time: "18:30", client: "schmidt", title: "Textura que permanece", format: "Estático", status: "Publicado" },
+    { date: "2026-06-09", time: "14:50", client: "hype",    title: "Memórias", format: "Carrossel", status: "Publicado" },
+    { date: "2026-06-09", time: "18:00", client: "fed",     title: "Taça Brasil Sub-17 — Encerramento", format: "Estático", status: "Agendado" },
+    { date: "2026-06-09", time: "18:00", client: "hype",    title: "Temperatura baixando e agora...? Como manter a frequência de treinos no inverno", format: "Carrossel", status: "Agendado" },
+    { date: "2026-06-10", time: "12:00", client: "schmidt", title: "O branco que aquece — Noiva", format: "Estático", status: "Agendado" },
+    { date: "2026-06-11", time: "18:30", client: "schmidt", title: "Como montar a mesa do encontro", format: "Carrossel", status: "Agendado" },
+    { date: "2026-06-15", time: "12:00", client: "schmidt", title: "Ambientação Inverno", format: "Reels", status: "Agendado" },
+  ];
+
+  const MESES = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+  const MES_ABR = ["JAN","FEV","MAR","ABR","MAI","JUN","JUL","AGO","SET","OUT","NOV","DEZ"];
+  const TODAY = "2026-06-09";
+
+  let viewYear = 2026, viewMonth = 5; // Junho (0-index)
+
+  function postsByDate(y, m, d) {
+    const key = `${y}-${String(m+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
+    return posts.filter(p => p.date === key);
+  }
+
+  function renderCalendar() {
+    document.getElementById("calTitle").textContent = `${MESES[viewMonth]} ${viewYear}`;
+    const grid = document.getElementById("calGrid");
+    grid.innerHTML = "";
+    const firstDay = new Date(viewYear, viewMonth, 1).getDay();
+    const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
+
+    for (let i = 0; i < firstDay; i++) {
+      const e = document.createElement("div");
+      e.className = "cell empty";
+      grid.appendChild(e);
+    }
+    for (let d = 1; d <= daysInMonth; d++) {
+      const cell = document.createElement("div");
+      cell.className = "cell";
+      const key = `${viewYear}-${String(viewMonth+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
+      if (key === TODAY) cell.classList.add("today");
+      const num = document.createElement("div");
+      num.className = "num";
+      num.textContent = d;
+      cell.appendChild(num);
+
+      postsByDate(viewYear, viewMonth, d).forEach(p => {
+        const c = clients[p.client];
+        const a = document.createElement("a");
+        a.className = `event ev-${c.cls}`;
+        a.href = c.url; a.target = "_blank"; a.rel = "noopener";
+        a.title = `${c.name} — ${p.title} (${p.format}, ${p.status})`;
+        a.innerHTML = `${p.title}<small>${p.time} · ${p.format}</small>`;
+        cell.appendChild(a);
+      });
+      grid.appendChild(cell);
+    }
+  }
+
+  function renderPosts() {
+    const list = document.getElementById("postsList");
+    list.innerHTML = "";
+    const sorted = [...posts].sort((a,b) => (a.date+a.time).localeCompare(b.date+b.time));
+    sorted.forEach(p => {
+      const c = clients[p.client];
+      const [y,m,d] = p.date.split("-");
+      const statusCls = p.status === "Publicado" ? "pub" : "agd";
+      const a = document.createElement("a");
+      a.className = "post-card";
+      a.href = c.url; a.target = "_blank"; a.rel = "noopener";
+      a.innerHTML = `
+        <div class="post-date"><div class="d">${parseInt(d)}</div><div class="m">${MES_ABR[parseInt(m)-1]}</div></div>
+        <div class="post-bar" style="background:${c.color}"></div>
+        <div class="post-body">
+          <div class="post-client" style="color:${c.color}">${c.name}</div>
+          <div class="post-title">${p.title}</div>
+          <div class="post-meta">
+            <span>🕒 ${p.time}</span>
+            <span class="tag fmt">${p.format}</span>
+            <span class="tag ${statusCls}">${p.status}</span>
+          </div>
+        </div>
+        ${igSvg()}`;
+      list.appendChild(a);
+    });
+  }
+
+  function renderClients() {
+    const grid = document.getElementById("clientGrid");
+    grid.innerHTML = "";
+    Object.values(clients).forEach(c => {
+      const a = document.createElement("a");
+      a.className = "client-card";
+      a.href = c.url; a.target = "_blank"; a.rel = "noopener";
+      a.innerHTML = `
+        <div class="avatar" style="background:${c.color}">${c.name.charAt(0)}</div>
+        <div><div class="name">${c.name}</div><div class="handle">${c.handle}</div></div>`;
+      grid.appendChild(a);
+    });
+  }
+
+  function igSvg() {
+    return `<svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>`;
+  }
+
+  document.getElementById("prevBtn").onclick = () => {
+    viewMonth--; if (viewMonth < 0) { viewMonth = 11; viewYear--; } renderCalendar();
+  };
+  document.getElementById("nextBtn").onclick = () => {
+    viewMonth++; if (viewMonth > 11) { viewMonth = 0; viewYear++; } renderCalendar();
+  };
+
+  renderCalendar();
+  renderPosts();
+  renderClients();
+</script>
+</body>
+</html>
