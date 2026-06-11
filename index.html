@@ -106,10 +106,10 @@
   .section-title .bar { width: 26px; height: 4px; background: var(--action-green);
     border-radius: 4px; }
   .posts { display: grid; gap: 12px; }
-  .post-card { display: flex; align-items: center; gap: 16px; text-decoration: none;
-    background: var(--surface); border: 1px solid var(--border);
+  .post-card { background: var(--surface); border: 1px solid var(--border);
     border-radius: 12px; padding: 16px 18px; color: var(--text); transition: .15s; }
-  .post-card:hover { border-color: var(--action-green); transform: translateX(4px); }
+  .post-card:hover { border-color: var(--action-green); }
+  .post-top { display: flex; align-items: center; gap: 16px; }
   .post-date { text-align: center; min-width: 56px; }
   .post-date .d { font-size: 24px; font-weight: 800; color: var(--white); }
   .post-date .m { font-size: 11px; color: var(--muted); text-transform: uppercase;
@@ -126,6 +126,27 @@
   .tag.agd { background: rgba(163,198,213,.16); color: var(--light-blue); }
   .ig-icon { width: 26px; height: 26px; flex-shrink: 0; color: var(--muted); }
   .post-card:hover .ig-icon { color: var(--action-green); }
+
+  /* Copy / legenda */
+  .copy-wrap { margin: 14px 0 4px; padding: 14px 16px; background: var(--almost-black);
+    border: 1px solid var(--border); border-radius: 10px; }
+  .copy { white-space: pre-line; font-size: 13.5px; line-height: 1.6; color: var(--text); }
+
+  /* Botões de ação */
+  .post-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+  .btn { display: inline-flex; align-items: center; gap: 6px; text-decoration: none;
+    font-size: 13px; font-weight: 700; padding: 9px 16px; border-radius: 9px;
+    cursor: pointer; border: 1px solid var(--border); transition: .15s;
+    font-family: inherit; }
+  .btn-drive { background: var(--action-green); color: var(--almost-black);
+    border-color: var(--action-green); }
+  .btn-drive:hover { filter: brightness(1.08); }
+  .btn-copy { background: transparent; color: var(--text); }
+  .btn-copy:hover { border-color: var(--action-green); color: var(--action-green); }
+  .btn-copy.copied { background: var(--strategy-green); color: #fff;
+    border-color: var(--strategy-green); }
+  .btn-ig { background: transparent; color: var(--muted); }
+  .btn-ig:hover { border-color: var(--light-blue); color: var(--light-blue); }
 
   /* Clients */
   .client-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
@@ -211,10 +232,27 @@
     { date: "2026-06-08", time: "18:30", client: "schmidt", title: "Textura que permanece", format: "Estático", status: "Publicado" },
     { date: "2026-06-09", time: "14:50", client: "hype",    title: "Memórias", format: "Carrossel", status: "Publicado" },
     { date: "2026-06-09", time: "18:00", client: "fed",     title: "Taça Brasil Sub-17 — Encerramento", format: "Estático", status: "Agendado" },
-    { date: "2026-06-09", time: "18:00", client: "hype",    title: "Temperatura baixando e agora...? Como manter a frequência de treinos no inverno", format: "Carrossel", status: "Agendado" },
     { date: "2026-06-10", time: "12:00", client: "schmidt", title: "O branco que aquece — Noiva", format: "Estático", status: "Agendado" },
+    { date: "2026-06-11", time: "12:00", client: "hype",    title: "Temperatura baixando e agora...? Como manter a frequência de treinos no inverno", format: "Carrossel", status: "Agendado" },
     { date: "2026-06-11", time: "18:30", client: "schmidt", title: "Como montar a mesa do encontro", format: "Carrossel", status: "Agendado" },
+    { date: "2026-06-12", time: "12:00", client: "hype",    title: "O que acontece com seu corpo quando você se alonga?", format: "Estático", status: "Agendado",
+      drive: "https://drive.google.com/drive/folders/1MZ0UFFpSAlG9STdLvhD0a6NnboSt0W5-?usp=sharing",
+      copy: `Você treina. Você se dedica. Mas tem uma etapa que a maioria ignora — e que pode estar travando seus resultados.
+O alongamento não é o fim do treino. É onde o resultado se consolida.
+Com a prática regular, seu corpo reduz a tensão muscular, melhora a circulação, recupera mais rápido e ainda regula o estresse. Tudo isso reflete diretamente na qualidade do seu treino — e da sua vida.
+Flexibilidade não é acrobacia. É qualidade de vida.
+Conheça o Hype Alonga e experimente uma aula. Terças e quintas · 8h30 às 9h15
+#HypeAlonga #AcademiaHype #AlongamentoGuiado #RecuperaçãoMuscular #QualidadeDeVida #TreinamentoCompleto #BemEstar #Curitiba` },
     { date: "2026-06-15", time: "12:00", client: "schmidt", title: "Ambientação Inverno", format: "Reels", status: "Agendado" },
+    { date: "2026-06-15", time: "12:00", client: "schmidt", title: "Cada detalhe, pensado em você — Coleção Esfera", format: "Reels", status: "Agendado",
+      drive: "https://drive.google.com/drive/folders/1CfwgTlBLZXEle7y3n7b1ok8vrtG_rrIK",
+      copy: `Cada cor carrega um ambiente. Cada peça, uma personalidade.
+A coleção Esfera veste a mesa com textura, profundidade e cor. Do cinza sereno ao azul intenso, do verde vivo ao calor do marrom e da mostarda.
+Para quem entende que a mesa também é decoração.
+Coleção Esfera — Porcelana Schmidt.
+#PorcelanaSchmidt #ColeçãoEsfera #MesaPosta #Porcelana #Tableware #Decoração #Design` },
+    { date: "2026-06-16", time: "12:00", client: "schmidt", title: "Coleção Guaporé — Utilidade e beleza", format: "Carrossel", status: "Agendado",
+      drive: "https://drive.google.com/drive/folders/1XcePwBhG95UahKuLUielZjTmSvhlK0qe" },
   ];
 
   const MESES = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
@@ -256,31 +294,59 @@
     }
   }
 
+  function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
   function renderPosts() {
     const list = document.getElementById("postsList");
     list.innerHTML = "";
     const sorted = [...posts].sort((a,b) => (a.date+a.time).localeCompare(b.date+b.time));
-    sorted.forEach(p => {
+    sorted.forEach((p, idx) => {
       const c = clients[p.client];
       const [y,m,d] = p.date.split("-");
       const statusCls = p.status === "Publicado" ? "pub" : "agd";
-      const a = document.createElement("a");
-      a.className = "post-card";
-      a.href = c.url; a.target = "_blank"; a.rel = "noopener";
-      a.innerHTML = `
-        <div class="post-date"><div class="d">${parseInt(d)}</div><div class="m">${MES_ABR[parseInt(m)-1]}</div></div>
-        <div class="post-bar" style="background:${c.color}"></div>
-        <div class="post-body">
-          <div class="post-client" style="color:${c.color}">${c.name}</div>
-          <div class="post-title">${p.title}</div>
-          <div class="post-meta">
-            <span>🕒 ${p.time}</span>
-            <span class="tag fmt">${p.format}</span>
-            <span class="tag ${statusCls}">${p.status}</span>
+      const card = document.createElement("div");
+      card.className = "post-card";
+
+      let actions = "";
+      if (p.drive) actions += `<a class="btn btn-drive" href="${p.drive}" target="_blank" rel="noopener">📁 Abrir criativo no Drive</a>`;
+      if (p.copy)  actions += `<button class="btn btn-copy" data-copy="${idx}">📋 Copiar legenda</button>`;
+      actions += `<a class="btn btn-ig" href="${c.url}" target="_blank" rel="noopener">Instagram</a>`;
+
+      const copyBlock = p.copy
+        ? `<div class="copy-wrap"><div class="copy" id="copy-${idx}">${esc(p.copy)}</div></div>`
+        : "";
+
+      card.innerHTML = `
+        <div class="post-top">
+          <div class="post-date"><div class="d">${parseInt(d)}</div><div class="m">${MES_ABR[parseInt(m)-1]}</div></div>
+          <div class="post-bar" style="background:${c.color}"></div>
+          <div class="post-body">
+            <div class="post-client" style="color:${c.color}">${c.name}</div>
+            <div class="post-title">${esc(p.title)}</div>
+            <div class="post-meta">
+              <span>🕒 ${p.time}</span>
+              <span class="tag fmt">${p.format}</span>
+              <span class="tag ${statusCls}">${p.status}</span>
+            </div>
           </div>
         </div>
-        ${igSvg()}`;
-      list.appendChild(a);
+        ${copyBlock}
+        <div class="post-actions">${actions}</div>`;
+      list.appendChild(card);
+    });
+
+    // botões de copiar legenda
+    list.querySelectorAll(".btn-copy").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const idx = btn.getAttribute("data-copy");
+        const txt = document.getElementById("copy-" + idx).innerText;
+        navigator.clipboard.writeText(txt).then(() => {
+          const old = btn.textContent;
+          btn.textContent = "✅ Legenda copiada!";
+          btn.classList.add("copied");
+          setTimeout(() => { btn.textContent = old; btn.classList.remove("copied"); }, 1800);
+        });
+      });
     });
   }
 
