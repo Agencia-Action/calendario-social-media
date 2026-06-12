@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Relatório de Desempenho — Action+</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Paleta oficial Action+ (Brandbook v1.0) */
+    --action-green: #91FF56;
+    --strategy-green: #4DC149;
+    --dark-blue: #042D46;
+    --very-dark-blue: #0C2335;
+    --almost-black: #00121D;
+    --light-blue: #A3C6D5;
+    --very-light-blue: #D4EBF9;
+    --really-light-blue: #EEF7FF;
+    --white: #FFFFFF;
+
+    --bg: var(--almost-black);
+    --surface: var(--very-dark-blue);
+    --surface-2: var(--dark-blue);
+    --border: #18415c;
+    --text: var(--really-light-blue);
+    --muted: #7fa6bb;
+    --accent: var(--action-green);
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 40px 32px 80px; }
+
+  header { margin-bottom: 40px; }
+  .topbar { display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 16px; margin-bottom: 36px; }
+  .logo { font-family: "Clash Display", "Inter", sans-serif; font-weight: 600;
+    font-size: 30px; letter-spacing: -.5px; color: var(--white); line-height: 1;
+    text-decoration: none; }
+  .logo .plus { color: var(--action-green); }
+  .topbar .tag { font-size: 12px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--muted); }
+
+  .hero { border-left: 4px solid var(--action-green); padding-left: 22px; }
+  h1 { font-size: clamp(30px, 5vw, 46px); font-weight: 800; line-height: 1.05;
+    color: var(--white); letter-spacing: -1px; }
+  h1 .accent { color: var(--action-green); }
+  .subtitle { color: var(--muted); margin-top: 12px; font-size: 16px; max-width: 640px; }
+
+  .section-title { display: flex; align-items: center; gap: 12px; margin: 46px 0 18px; }
+  .section-title h2 { font-size: 22px; font-weight: 700; color: var(--white);
+    letter-spacing: -.3px; }
+  .section-title .bar { width: 26px; height: 4px; background: var(--action-green);
+    border-radius: 4px; }
+  .section-title .chip { font-size: 11px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--muted); margin-left: auto; }
+
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px; }
+  .kpi { background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 20px; transition: .15s; }
+  .kpi:hover { border-color: var(--action-green); }
+  .kpi .label { font-size: 12.5px; color: var(--muted); font-weight: 600;
+    margin-bottom: 8px; }
+  .kpi .value { font-size: 28px; font-weight: 800; color: var(--white);
+    letter-spacing: -.5px; line-height: 1.1; }
+  .kpi .value.green { color: var(--action-green); }
+  .kpi .note { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+  .highlights { display: grid; gap: 12px; }
+  .hl-card { display: flex; gap: 16px; align-items: flex-start;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 18px 20px; transition: .15s; }
+  .hl-card:hover { border-color: var(--action-green); }
+  .hl-num { font-family: "Clash Display","Inter",sans-serif; font-weight: 700;
+    font-size: 22px; color: var(--action-green); min-width: 34px; line-height: 1.2; }
+  .hl-body .t { font-size: 15.5px; font-weight: 700; color: var(--white); }
+  .hl-body .d { font-size: 14px; color: var(--text); margin-top: 4px; }
+  .hl-body .d strong { color: var(--action-green); font-weight: 700; }
+
+  footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+    gap: 10px; color: var(--muted); font-size: 13px; }
+  footer .site { color: var(--action-green); font-weight: 700;
+    font-family: "Clash Display","Inter",sans-serif; letter-spacing: .3px; }
+  footer a { color: var(--muted); }
+
+  @media (max-width: 720px) {
+    .wrap { padding: 28px 18px 60px; }
+    .kpi .value { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="topbar">
+      <a class="logo" href="index.html">Action<span class="plus">+</span></a>
+      <div class="tag">Relatório de desempenho · 14/05 a 12/06/2026</div>
+    </div>
+    <div class="hero">
+      <h1>Resultados do <span class="accent">período</span></h1>
+      <p class="subtitle">Visão geral dos principais indicadores de mídia e presença digital entre 14 de maio e 12 de junho de 2026. Clareza na visão, método na execução.</p>
+    </div>
+  </header>
+
+  <div class="section-title"><span class="bar"></span><h2>Visão geral</h2></div>
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="label">Investimento total</div>
+      <div class="value green">R$ 2.097,60</div>
+      <div class="note">5 campanhas · 14 anúncios ativos</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Impressões totais</div>
+      <div class="value">188.263</div>
+      <div class="note">Meta Ads + Google Ads</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Pessoas alcançadas (Meta)</div>
+      <div class="value">125.350</div>
+      <div class="note">Facebook + Instagram</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Conversões (Google Ads)</div>
+      <div class="value green">28</div>
+      <div class="note">Custo por conversão de R$ 49,26</div>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="bar"></span><h2>Google Ads</h2><span class="chip">Pesquisa</span></div>
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="label">Taxa de conversão</div>
+      <div class="value green">14,36%</div>
+    </div>
+    <div class="kpi">
+      <div class="label">CTR (taxa de cliques)</div>
+      <div class="value">3,41%</div>
+      <div class="note">195 cliques em 5.722 impressões</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Todas as conversões</div>
+      <div class="value">82</div>
+      <div class="note">A R$ 16,82 cada</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Melhor palavra-chave</div>
+      <div class="value" style="font-size:19px;">"Agência de Marketing Curitiba"</div>
+      <div class="note">CTR de 7,21% e 5 conversões</div>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="bar"></span><h2>Meta Ads</h2><span class="chip">Facebook + Instagram</span></div>
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="label">CPM médio</div>
+      <div class="value">R$ 3,94</div>
+      <div class="note">Topo de funil com CPM de R$ 1,14</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Retenção de vídeo (3s)</div>
+      <div class="value green">94,41%</div>
+      <div class="note">4.333 reproduções iniciais</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Custo por ThruPlay</div>
+      <div class="value">R$ 1,98</div>
+      <div class="note">362 ThruPlays no período</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Conversas iniciadas</div>
+      <div class="value">8</div>
+      <div class="note">Facebook + Instagram</div>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="bar"></span><h2>Presença digital</h2><span class="chip">Orgânico + Local</span></div>
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="label">Visualizações no Instagram</div>
+      <div class="value">58.542</div>
+      <div class="note">111 visitas ao perfil</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Google Meu Negócio</div>
+      <div class="value">290</div>
+      <div class="note">Visualizações · 59 ações no perfil</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Solicitações de rota</div>
+      <div class="value green">47</div>
+      <div class="note">Pessoas a caminho do escritório</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Usuários no site (GA4)</div>
+      <div class="value">537</div>
+      <div class="note">592 sessões no período</div>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="bar"></span><h2>Destaques do período</h2></div>
+  <div class="highlights">
+    <div class="hl-card">
+      <div class="hl-num">01</div>
+      <div class="hl-body">
+        <div class="t">Google Ads consolidado como motor de conversão</div>
+        <div class="d">Foram <strong>28 conversões</strong> com taxa de conversão de <strong>14,36%</strong> e CTR de 3,41%, bem acima da média do setor para pesquisa.</div>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-num">02</div>
+      <div class="hl-body">
+        <div class="t">Alcance de topo de funil com custo excelente</div>
+        <div class="d">A campanha de reconhecimento alcançou <strong>118 mil pessoas</strong> com CPM de apenas <strong>R$ 1,14</strong>, ampliando a presença da marca.</div>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-num">03</div>
+      <div class="hl-body">
+        <div class="t">Vídeos prendendo a atenção</div>
+        <div class="d"><strong>94,41%</strong> das pessoas assistiram aos 3 primeiros segundos dos vídeos, com custo por ThruPlay de apenas <strong>R$ 1,98</strong>.</div>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-num">04</div>
+      <div class="hl-body">
+        <div class="t">Demanda local em alta no Google Meu Negócio</div>
+        <div class="d">Foram <strong>47 solicitações de rota</strong>, 9 cliques para o site e 3 ligações — gente real procurando a Action+ em Curitiba.</div>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-num">05</div>
+      <div class="hl-body">
+        <div class="t">Palavra-chave certeira na busca local</div>
+        <div class="d">"Agência de Marketing Curitiba" entregou CTR de <strong>7,21%</strong> e 5 conversões, confirmando a força da marca na busca local.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>Action+ · Assessoria de crescimento empresarial — período de 14/05 a 12/06/2026</span>
+    <span class="site">agenciaaction.com</span>
+  </footer>
+</div>
+</body>
+</html>
