@@ -81,6 +81,7 @@ Os dados ficam em duas arrays JavaScript dentro do `<script>` do `index.html`: *
 | 09/06/2026 | 14:50 | Fed. Futsal | Memórias | Carrossel | Publicado | — |
 | 09/06/2026 | 18:00 | Fed. Futsal | Taça Brasil Sub-17 — Encerramento | Estático | Agendado | — |
 | 10/06/2026 | 12:00 | Porcelana Schmidt | O branco que aquece — Noiva | Estático | Agendado | — |
+| 11/06/2026 | 12:00 | Academia Hype | Esfriou lá fora? Como manter a frequência de treinos no inverno | Carrossel | Publicado | — |
 | 11/06/2026 | 18:30 | Porcelana Schmidt | Como montar a mesa do encontro | Carrossel | Agendado | — |
 | 15/06/2026 | 10:55 | Academia Hype | O que acontece com seu corpo quando você se alonga? | Estático | Agendado | ✅ |
 | 15/06/2026 | 12:00 | Porcelana Schmidt | Ambientação Inverno | Reels | Agendado | — |
@@ -88,7 +89,8 @@ Os dados ficam em duas arrays JavaScript dentro do `<script>` do `index.html`: *
 | 15/06/2026 | 18:00 | Academia Hype | Super Aulão — Júnior e Fernando | Estático | Agendado | ✅ |
 | 16/06/2026 | 12:00 | Porcelana Schmidt | Coleção Guaporé — Utilidade e beleza | Carrossel | Agendado | ✅ |
 | 16/06/2026 | 12:00 | Academia Hype | Avaliação Alexandre Formagio | Estático + Stories | Agendado | ✅ |
-| 17/06/2026 | 12:00 | Academia Hype | Semana da Saúde Inverno 2026 — Programação | Carrossel | Agendado | ✅ |
+| 17/06/2026 | 12:00 | Academia Hype | Semana da Saúde Inverno 2026 — Save the date | Estático | Agendado | — |
+| 18/06/2026 | 12:00 | Academia Hype | Semana da Saúde Inverno 2026 — Programação | Carrossel | Agendado | ✅ |
 | 19/06/2026 | 12:00 | Academia Hype | Semana da Saúde — Você sabe quanto evoluiu? | Carrossel | Agendado | ✅ |
 
 ---
