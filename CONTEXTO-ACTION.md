@@ -66,6 +66,10 @@ Os dados ficam em duas arrays JavaScript dentro do `<script>` do `index.html`: *
 | Alongamento ("O que acontece quando você se alonga") | Hype | https://drive.google.com/drive/folders/1MZ0UFFpSAlG9STdLvhD0a6NnboSt0W5-?usp=sharing |
 | Coleção Esfera ("Cada detalhe, pensado em você") | Schmidt | https://drive.google.com/drive/folders/1CfwgTlBLZXEle7y3n7b1ok8vrtG_rrIK |
 | Coleção Guaporé ("Utilidade e beleza") | Schmidt | https://drive.google.com/drive/folders/1XcePwBhG95UahKuLUielZjTmSvhlK0qe |
+| Super Aulão (Júnior e Fernando) | Hype | https://drive.google.com/drive/folders/152BZAiWSK2Bdd4zYPwyV0dK9In_pjxJ4 |
+| Avaliação Alexandre Formagio | Hype | https://drive.google.com/drive/folders/1JcTAO218sCEINapih4qmQlrFk4KndwxB?usp=drive_link |
+| Semana da Saúde — Programação | Hype | https://drive.google.com/drive/folders/16Xyu3yHjTEdr1ZXWy2nHlQjKZvjM7nSa |
+| Semana da Saúde — Você sabe quanto evoluiu? | Hype | https://drive.google.com/drive/folders/1BlN0vUyEp7k4ig9FaGUO-Y9RZHt-SEbX |
 
 ---
 
@@ -81,8 +85,12 @@ Os dados ficam em duas arrays JavaScript dentro do `<script>` do `index.html`: *
 | 15/06/2026 | 10:55 | Academia Hype | O que acontece com seu corpo quando você se alonga? | Estático | Agendado | ✅ |
 | 15/06/2026 | 12:00 | Porcelana Schmidt | Ambientação Inverno | Reels | Agendado | — |
 | 15/06/2026 | 12:00 | Porcelana Schmidt | Cada detalhe, pensado em você — Coleção Esfera | Reels | Agendado | ✅ |
+| 15/06/2026 | 18:00 | Academia Hype | Super Aulão — Júnior e Fernando | Estático | Agendado | ✅ |
 | 16/06/2026 | 12:00 | Porcelana Schmidt | Coleção Guaporé — Utilidade e beleza | Carrossel | Agendado | ✅ |
+| 16/06/2026 | 12:00 | Academia Hype | Avaliação Alexandre Formagio | Estático + Stories | Agendado | ✅ |
+| 17/06/2026 | 12:00 | Academia Hype | Semana da Saúde Inverno 2026 — Programação | Carrossel | Agendado | ✅ |
 | 17/06/2026 | 16:20 | Academia Hype | Temperatura baixando e agora...? Como manter a frequência de treinos no inverno | Carrossel | Agendado | — |
+| 19/06/2026 | 12:00 | Academia Hype | Semana da Saúde — Você sabe quanto evoluiu? | Carrossel | Agendado | ✅ |
 
 ---
 
