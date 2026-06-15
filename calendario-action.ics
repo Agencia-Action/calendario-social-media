@@ -1,0 +1,260 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Action+//Calendario Social Media//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Action+ · Publicações Social Media
+X-WR-TIMEZONE:America/Sao_Paulo
+BEGIN:VEVENT
+UID:action-post-01@agenciaaction.com
+DTSTAMP:20260615T120000Z
+DTSTART:20260608T183000
+DTEND:20260608T190000
+SUMMARY:📲 [Schmidt] Textura que permanece
+DESCRIPTION:Cliente: Porcelana Schmidt\nFormato: Estático\nInstagram: https://www.instagram.com/porcelanaschmidt/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Hora de publicar — Textura que permanece
+TRIGGER:PT0S
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Em 15 min — Textura que permanece (Schmidt)
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:action-post-02@agenciaaction.com
+DTSTAMP:20260615T120000Z
+DTSTART:20260609T145000
+DTEND:20260609T152000
+SUMMARY:📲 [Federação] Memórias
+DESCRIPTION:Cliente: Federação Paranaense de Futsal\nFormato: Carrossel\nInstagram: https://www.instagram.com/federacaoparanaensedefutsal/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Hora de publicar — Memórias
+TRIGGER:PT0S
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Em 15 min — Memórias (Federação)
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:action-post-03@agenciaaction.com
+DTSTAMP:20260615T120000Z
+DTSTART:20260609T180000
+DTEND:20260609T183000
+SUMMARY:📲 [Federação] Taça Brasil Sub-17 — Encerramento
+DESCRIPTION:Cliente: Federação Paranaense de Futsal\nFormato: Estático\nInstagram: https://www.instagram.com/federacaoparanaensedefutsal/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Hora de publicar — Taça Brasil Sub-17
+TRIGGER:PT0S
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Em 15 min — Taça Brasil Sub-17 (Federação)
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:action-post-04@agenciaaction.com
+DTSTAMP:20260615T120000Z
+DTSTART:20260610T120000
+DTEND:20260610T123000
+SUMMARY:📲 [Schmidt] O branco que aquece — Noiva
+DESCRIPTION:Cliente: Porcelana Schmidt\nFormato: Estático\nInstagram: https://www.instagram.com/porcelanaschmidt/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Hora de publicar — O branco que aquece
+TRIGGER:PT0S
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Em 15 min — O branco que aquece (Schmidt)
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:action-post-05@agenciaaction.com
+DTSTAMP:20260615T120000Z
+DTSTART:20260611T183000
+DTEND:20260611T190000
+SUMMARY:📲 [Schmidt] Como montar a mesa do encontro
+DESCRIPTION:Cliente: Porcelana Schmidt\nFormato: Carrossel\nInstagram: https://www.instagram.com/porcelanaschmidt/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Hora de publicar — Como montar a mesa
+TRIGGER:PT0S
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Em 15 min — Como montar a mesa (Schmidt)
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:action-post-06@agenciaaction.com
+DTSTAMP:20260615T120000Z
+DTSTART:20260615T105500
+DTEND:20260615T112500
+SUMMARY:📲 [Hype] O que acontece com seu corpo quando você se alonga?
+DESCRIPTION:Cliente: Academia Hype\nFormato: Estático\nDrive: https://drive.google.com/drive/folders/1MZ0UFFpSAlG9STdLvhD0a6NnboSt0W5-\nInstagram: https://www.instagram.com/academia_hype/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Hora de publicar — Alongamento
+TRIGGER:PT0S
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Em 15 min — Alongamento (Hype)
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:action-post-07@agenciaaction.com
+DTSTAMP:20260615T120000Z
+DTSTART:20260615T120000
+DTEND:20260615T123000
+SUMMARY:📲 [Schmidt] Ambientação Inverno
+DESCRIPTION:Cliente: Porcelana Schmidt\nFormato: Reels\nInstagram: https://www.instagram.com/porcelanaschmidt/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Hora de publicar — Ambientação Inverno
+TRIGGER:PT0S
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Em 15 min — Ambientação Inverno (Schmidt)
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:action-post-08@agenciaaction.com
+DTSTAMP:20260615T120000Z
+DTSTART:20260615T120000
+DTEND:20260615T123000
+SUMMARY:📲 [Schmidt] Cada detalhe, pensado em você — Coleção Esfera
+DESCRIPTION:Cliente: Porcelana Schmidt\nFormato: Reels\nDrive: https://drive.google.com/drive/folders/1CfwgTlBLZXEle7y3n7b1ok8vrtG_rrIK\nInstagram: https://www.instagram.com/porcelanaschmidt/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Hora de publicar — Coleção Esfera
+TRIGGER:PT0S
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Em 15 min — Coleção Esfera (Schmidt)
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:action-post-09@agenciaaction.com
+DTSTAMP:20260615T120000Z
+DTSTART:20260615T180000
+DTEND:20260615T183000
+SUMMARY:📲 [Hype] Super Aulão — Júnior e Fernando
+DESCRIPTION:Cliente: Academia Hype\nFormato: Estático\nDrive: https://drive.google.com/drive/folders/152BZAiWSK2Bdd4zYPwyV0dK9In_pjxJ4\nInstagram: https://www.instagram.com/academia_hype/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Hora de publicar — Super Aulão
+TRIGGER:PT0S
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Em 15 min — Super Aulão (Hype)
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:action-post-10@agenciaaction.com
+DTSTAMP:20260615T120000Z
+DTSTART:20260616T120000
+DTEND:20260616T123000
+SUMMARY:📲 [Schmidt] Coleção Guaporé — Utilidade e beleza
+DESCRIPTION:Cliente: Porcelana Schmidt\nFormato: Carrossel\nDrive: https://drive.google.com/drive/folders/1XcePwBhG95UahKuLUielZjTmSvhlK0qe\nInstagram: https://www.instagram.com/porcelanaschmidt/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Hora de publicar — Coleção Guaporé
+TRIGGER:PT0S
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Em 15 min — Coleção Guaporé (Schmidt)
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:action-post-11@agenciaaction.com
+DTSTAMP:20260615T120000Z
+DTSTART:20260616T120000
+DTEND:20260616T123000
+SUMMARY:📲 [Hype] Avaliação Alexandre Formagio (+ Stories)
+DESCRIPTION:Cliente: Academia Hype\nFormato: Estático + Stories\nDrive: https://drive.google.com/drive/folders/1JcTAO218sCEINapih4qmQlrFk4KndwxB\nInstagram: https://www.instagram.com/academia_hype/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Hora de publicar — Avaliação Alexandre (+ Stories)
+TRIGGER:PT0S
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Em 15 min — Avaliação Alexandre (Hype)
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:action-post-12@agenciaaction.com
+DTSTAMP:20260615T120000Z
+DTSTART:20260617T120000
+DTEND:20260617T123000
+SUMMARY:📲 [Hype] Semana da Saúde Inverno 2026 — Programação
+DESCRIPTION:Cliente: Academia Hype\nFormato: Carrossel\nDrive: https://drive.google.com/drive/folders/16Xyu3yHjTEdr1ZXWy2nHlQjKZvjM7nSa\nInstagram: https://www.instagram.com/academia_hype/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Hora de publicar — Semana da Saúde (Programação)
+TRIGGER:PT0S
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Em 15 min — Semana da Saúde Programação (Hype)
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:action-post-13@agenciaaction.com
+DTSTAMP:20260615T120000Z
+DTSTART:20260617T162000
+DTEND:20260617T165000
+SUMMARY:📲 [Hype] Temperatura baixando e agora...?
+DESCRIPTION:Cliente: Academia Hype\nFormato: Carrossel\nInstagram: https://www.instagram.com/academia_hype/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Hora de publicar — Temperatura baixando
+TRIGGER:PT0S
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Em 15 min — Temperatura baixando (Hype)
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:action-post-14@agenciaaction.com
+DTSTAMP:20260615T120000Z
+DTSTART:20260619T120000
+DTEND:20260619T123000
+SUMMARY:📲 [Hype] Semana da Saúde — Você sabe quanto evoluiu?
+DESCRIPTION:Cliente: Academia Hype\nFormato: Carrossel\nDrive: https://drive.google.com/drive/folders/1BlN0vUyEp7k4ig9FaGUO-Y9RZHt-SEbX\nInstagram: https://www.instagram.com/academia_hype/
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Hora de publicar — Semana da Saúde (evoluiu)
+TRIGGER:PT0S
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Em 15 min — Semana da Saúde evoluiu (Hype)
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
