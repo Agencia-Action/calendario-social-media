@@ -89,7 +89,6 @@ Os dados ficam em duas arrays JavaScript dentro do `<script>` do `index.html`: *
 | 16/06/2026 | 12:00 | Porcelana Schmidt | Coleção Guaporé — Utilidade e beleza | Carrossel | Agendado | ✅ |
 | 16/06/2026 | 12:00 | Academia Hype | Avaliação Alexandre Formagio | Estático + Stories | Agendado | ✅ |
 | 17/06/2026 | 12:00 | Academia Hype | Semana da Saúde Inverno 2026 — Programação | Carrossel | Agendado | ✅ |
-| 17/06/2026 | 16:20 | Academia Hype | Temperatura baixando e agora...? Como manter a frequência de treinos no inverno | Carrossel | Agendado | — |
 | 19/06/2026 | 12:00 | Academia Hype | Semana da Saúde — Você sabe quanto evoluiu? | Carrossel | Agendado | ✅ |
 
 ---
