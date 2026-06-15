@@ -74,7 +74,7 @@ Os dados ficam em duas arrays JavaScript dentro do `<script>` do `index.html`: *
 | Data | Hora | Cliente | Título | Formato | Status | Drive |
 |------|------|---------|--------|---------|--------|-------|
 | 08/06/2026 | 18:30 | Porcelana Schmidt | Textura que permanece | Estático | Publicado | — |
-| 09/06/2026 | 14:50 | Academia Hype | Memórias | Carrossel | Publicado | — |
+| 09/06/2026 | 14:50 | Fed. Futsal | Memórias | Carrossel | Publicado | — |
 | 09/06/2026 | 18:00 | Fed. Futsal | Taça Brasil Sub-17 — Encerramento | Estático | Agendado | — |
 | 10/06/2026 | 12:00 | Porcelana Schmidt | O branco que aquece — Noiva | Estático | Agendado | — |
 | 11/06/2026 | 18:30 | Porcelana Schmidt | Como montar a mesa do encontro | Carrossel | Agendado | — |
