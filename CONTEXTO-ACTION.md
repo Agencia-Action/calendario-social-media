@@ -94,6 +94,7 @@ Os dados ficam em duas arrays JavaScript dentro do `<script>` do `index.html`: *
 | 18/06/2026 | 12:00 | Porcelana Schmidt | Sabores de inverno — Coleção Guaporé | Carrossel | Agendado | ✅ |
 | 19/06/2026 | 12:00 | Academia Hype | Semana da Saúde — Você sabe quanto evoluiu? | Carrossel | Agendado | ✅ |
 | 22/06/2026 | 12:00 | Porcelana Schmidt | Coleção Guaporé — O frio chegou | Reels | Agendado | — |
+| 23/06/2026 | 12:00 | Porcelana Schmidt | Coleção Noiva — Peças que ficam | Carrossel | Agendado | — |
 
 ---
 
