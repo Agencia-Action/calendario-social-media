@@ -147,6 +147,30 @@
     border-color: var(--strategy-green); }
   .btn-ig { background: transparent; color: var(--muted); }
   .btn-ig:hover { border-color: var(--light-blue); color: var(--light-blue); }
+  .btn-done { background: transparent; color: var(--muted); }
+  .btn-done:hover { border-color: var(--action-green); color: var(--action-green); }
+  .btn-done.is-done { background: var(--action-green); color: var(--almost-black);
+    border-color: var(--action-green); }
+
+  /* Contador */
+  .cal-head-right { display: flex; align-items: center; gap: 16px; }
+  .done-counter { font-size: 13px; font-weight: 700; color: var(--action-green);
+    background: rgba(145,255,86,.12); padding: 6px 12px; border-radius: 20px; white-space: nowrap; }
+
+  /* Marcador entrou/não entrou — eventos do calendário */
+  .event { position: relative; }
+  .ev-check { position: absolute; top: 6px; right: 6px; width: 17px; height: 17px;
+    border-radius: 50%; border: 2px solid currentColor; display: grid; place-items: center;
+    font-size: 11px; font-weight: 900; line-height: 1; opacity: .55; cursor: pointer; }
+  .ev-check:hover { opacity: 1; }
+  .ev-title { display: block; padding-right: 20px; }
+  .event.done { opacity: .55; }
+  .event.done .ev-title { text-decoration: line-through; }
+  .event.done .ev-check { opacity: 1; }
+
+  /* Marcador entrou/não entrou — cards */
+  .post-card.done { opacity: .62; }
+  .post-card.done .post-title { text-decoration: line-through; }
 
   /* Clients */
   .client-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
@@ -185,7 +209,7 @@
     </div>
     <div class="hero">
       <h1>Calendário de <span class="accent">Publicações</span></h1>
-      <p class="subtitle">Clique em qualquer publicação para abrir o Instagram do cliente. Clareza na visão, método na execução.</p>
+      <p class="subtitle">Clique na publicação para abrir o Instagram do cliente. Use o ✓ para marcar o que já entrou — fica riscado e salvo no seu navegador.</p>
     </div>
     <div class="legend">
       <div class="legend-item"><span class="swatch" style="background:#91FF56"></span> Academia Hype</div>
@@ -197,9 +221,12 @@
   <section class="cal-card">
     <div class="cal-head">
       <h2 id="calTitle">Junho 2026</h2>
-      <div class="cal-nav">
-        <button id="prevBtn" aria-label="Mês anterior">‹</button>
-        <button id="nextBtn" aria-label="Próximo mês">›</button>
+      <div class="cal-head-right">
+        <span id="doneCounter" class="done-counter"></span>
+        <div class="cal-nav">
+          <button id="prevBtn" aria-label="Mês anterior">‹</button>
+          <button id="nextBtn" aria-label="Próximo mês">›</button>
+        </div>
       </div>
     </div>
     <div class="weekdays">
@@ -251,8 +278,16 @@ A coleção Esfera veste a mesa com textura, profundidade e cor. Do cinza sereno
 Para quem entende que a mesa também é decoração.
 Coleção Esfera — Porcelana Schmidt.
 #PorcelanaSchmidt #ColeçãoEsfera #MesaPosta #Porcelana #Tableware #Decoração #Design` },
-    { date: "2026-06-16", time: "12:00", client: "schmidt", title: "Coleção Guaporé — Utilidade e beleza", format: "Carrossel", status: "Agendado",
-      drive: "https://drive.google.com/drive/folders/1XcePwBhG95UahKuLUielZjTmSvhlK0qe" },
+    { date: "2026-06-18", time: "12:00", client: "schmidt", title: "Sabores de inverno — Coleção Guaporé", format: "Carrossel", status: "Agendado",
+      drive: "https://drive.google.com/drive/folders/1XcePwBhG95UahKuLUielZjTmSvhlK0qe",
+      copy: `O inverno tem sabores que a gente não esquece. E cada um deles merece uma mesa bonita de verdade.
+
+Deslize para ver como a Guaporé transforma cada momento de inverno em algo que vale guardar.
+
+A coleção que une utilidade e beleza na mesa de todo dia. Feita para durar, pensada para encantar.
+
+Qual é o prato de inverno que mais te leva de volta pra casa? Conta aqui. 🍲🍷
+#PorcelanaSchmidt #ColeçãoGuaporé #MesaPosta #Porcelana #SaboresDeInverno` },
     { date: "2026-06-15", time: "18:00", client: "hype",    title: "Super Aulão — Júnior e Fernando", format: "Estático", status: "Agendado",
       drive: "https://drive.google.com/drive/folders/152BZAiWSK2Bdd4zYPwyV0dK9In_pjxJ4",
       copy: `Hypers, chegou a hora de sair do automático. 🔥
@@ -293,12 +328,46 @@ Avalie. Ajuste. Evolua.
 A Semana da Saúde Inverno 2026 acontece de 22 a 26 de junho, com avaliações gratuitas pra você entender de verdade como seu corpo está e o que precisa de atenção.
 Encaixa na sua agenda e aproveita. A Hype te espera.
 #SemanaDaSaúde #HypeInverno2026 #AcademiaHype #SaúdeEmMovimento #InvernoHype` },
+    { date: "2026-06-17", time: "12:00", client: "schmidt", title: "O inverno tem ritual — Noiva e Guaporé", format: "Carrossel", status: "Agendado",
+      copy: `Todo inverno, a gente sente. O frio que aperta lá fora. O cheiro que toma conta da cozinha. O calor que sobe pelas mãos. 🍵
+
+Mas poucos momentos têm a peça certa para guardá-los.
+Das xícaras às canecas, dos bowls aos pratos, a Porcelana Schmidt tem a peça certa para cada momento da sua vida.
+
+Arrasta para descobrir qual ritual é o seu. 🫖
+Coleções Noiva e Guaporé. Conheça mais no link na bio!
+
+#PorcelanaSchmidt #InvernoSchmidt #ColeçãoNoiva #ColeçãoGuaporé #MesaPosta #Porcelana #RituaisDeInverno #InvernoBrasileiro` },
+    { date: "2026-06-22", time: "12:00", client: "schmidt", title: "Coleção Guaporé — O frio chegou", format: "Reels", status: "Agendado",
+      copy: `O frio chegou. E com ele, a vontade de desacelerar.
+
+Tem algo na porcelana quente entre as mãos que muda o ritmo do dia e transforma uma pausa em momento, uma xícara em presença.
+
+A Guaporé foi feita assim: com leveza nas formas, delicadeza no toque e uma estampa que parece sussurrar.
+
+Este é o tipo de coisa que se sente — não se explica.
+
+🌿 Coleção Guaporé · Porcelana Schmidt #PorcelanaSchmidt #Guaporé #IníciodoInverno #MesaPosta #Aconchego` },
   ];
 
   const MESES = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
   const MES_ABR = ["JAN","FEV","MAR","ABR","MAI","JUN","JUL","AGO","SET","OUT","NOV","DEZ"];
   const TODAY = "2026-06-15";
   let viewYear = 2026, viewMonth = 5;
+
+  // ---- Controle "entrou / não entrou" (persistido no navegador) ----
+  const DONE_KEY = "action_posts_done";
+  function loadDone() { try { return JSON.parse(localStorage.getItem(DONE_KEY) || "{}"); } catch (e) { return {}; } }
+  function saveDone(o) { localStorage.setItem(DONE_KEY, JSON.stringify(o)); }
+  function postId(p) { return p.date + "|" + p.time + "|" + p.title; }
+  function isDone(p) { const o = loadDone(); const id = postId(p); return (id in o) ? o[id] : (p.status === "Publicado"); }
+  function toggleDone(p) { const o = loadDone(); const id = postId(p); o[id] = !isDone(p); saveDone(o); renderAll(); }
+  function renderAll() { renderCalendar(); renderPosts(); renderClients(); updateCounter(); }
+  function updateCounter() {
+    const done = posts.filter(isDone).length;
+    const el = document.getElementById("doneCounter");
+    if (el) el.textContent = `${done} de ${posts.length} publicados`;
+  }
 
   function postsByDate(y, m, d) {
     const key = `${y}-${String(m+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
@@ -322,12 +391,16 @@ Encaixa na sua agenda e aproveita. A Hype te espera.
       cell.appendChild(num);
       postsByDate(viewYear, viewMonth, d).forEach(p => {
         const c = clients[p.client];
+        const done = isDone(p);
         const a = document.createElement("a");
-        a.className = "event";
+        a.className = "event" + (done ? " done" : "");
         a.style.background = c.color; a.style.color = c.text;
         a.href = c.url; a.target = "_blank"; a.rel = "noopener";
-        a.title = `${c.name} — ${p.title} (${p.format}, ${p.status})`;
-        a.innerHTML = `${p.title}<small>${p.time} · ${p.format}</small>`;
+        a.title = `${c.name} — ${p.title} (${p.format})`;
+        a.innerHTML = `<span class="ev-check" title="Marcar entrou/não entrou">${done ? "✓" : ""}</span><span class="ev-title">${p.title}</span><small>${p.time} · ${p.format}</small>`;
+        a.querySelector(".ev-check").addEventListener("click", (e) => {
+          e.preventDefault(); e.stopPropagation(); toggleDone(p);
+        });
         cell.appendChild(a);
       });
       grid.appendChild(cell);
@@ -343,11 +416,11 @@ Encaixa na sua agenda e aproveita. A Hype te espera.
     sorted.forEach((p, idx) => {
       const c = clients[p.client];
       const [y,m,d] = p.date.split("-");
-      const statusCls = p.status === "Publicado" ? "pub" : "agd";
+      const done = isDone(p);
       const card = document.createElement("div");
-      card.className = "post-card";
+      card.className = "post-card" + (done ? " done" : "");
 
-      let actions = "";
+      let actions = `<button class="btn btn-done${done ? " is-done" : ""}" data-done="${idx}">${done ? "✓ Entrou" : "Marcar como entrou"}</button>`;
       if (p.drive) actions += `<a class="btn btn-drive" href="${p.drive}" target="_blank" rel="noopener">📁 Abrir criativo no Drive</a>`;
       if (p.copy)  actions += `<button class="btn btn-copy" data-copy="${idx}">📋 Copiar legenda</button>`;
       actions += `<a class="btn btn-ig" href="${c.url}" target="_blank" rel="noopener">Instagram</a>`;
@@ -366,13 +439,22 @@ Encaixa na sua agenda e aproveita. A Hype te espera.
             <div class="post-meta">
               <span>🕒 ${p.time}</span>
               <span class="tag fmt">${p.format}</span>
-              <span class="tag ${statusCls}">${p.status}</span>
+              <span class="tag ${done ? "pub" : "agd"}">${done ? "Entrou ✓" : "Não entrou"}</span>
             </div>
           </div>
         </div>
         ${copyBlock}
         <div class="post-actions">${actions}</div>`;
+      card._post = p;
       list.appendChild(card);
+    });
+
+    // botão marcar entrou/não entrou
+    list.querySelectorAll(".btn-done").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const idx = btn.getAttribute("data-done");
+        toggleDone(sorted[idx]);
+      });
     });
 
     // botões de copiar legenda
@@ -415,7 +497,7 @@ Encaixa na sua agenda e aproveita. A Hype te espera.
     viewMonth++; if (viewMonth > 11) { viewMonth = 0; viewYear++; } renderCalendar();
   };
 
-  renderCalendar(); renderPosts(); renderClients();
+  renderAll();
 </script>
 </body>
 </html>
