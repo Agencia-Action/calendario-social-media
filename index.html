@@ -364,8 +364,11 @@ Coleção Noiva. Porcelana Schmidt.
 
   const MESES = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
   const MES_ABR = ["JAN","FEV","MAR","ABR","MAI","JUN","JUL","AGO","SET","OUT","NOV","DEZ"];
-  const TODAY = "2026-06-15";
-  let viewYear = 2026, viewMonth = 5;
+  // "Hoje" dinâmico — sempre o dia real do navegador
+  const _now = new Date();
+  const _pad = n => String(n).padStart(2, "0");
+  const TODAY = `${_now.getFullYear()}-${_pad(_now.getMonth() + 1)}-${_pad(_now.getDate())}`;
+  let viewYear = _now.getFullYear(), viewMonth = _now.getMonth();
 
   // ---- Controle "entrou / não entrou" (persistido no navegador) ----
   const DONE_KEY = "action_posts_done";
