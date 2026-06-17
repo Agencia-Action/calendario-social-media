@@ -138,6 +138,26 @@ A LP consome dois objetos. Para sincronizar com o Supabase, sugere-se o schema a
 
 ---
 
+## 6.1 Aba Relatórios (insights — editável no navegador)
+
+A LP tem uma aba **Relatórios** onde a equipe registra métricas. Hoje é salvo em `localStorage` (chave `action_reports`); o ideal é migrar para o Supabase. Estrutura:
+
+- **email**: `[{ data, marca, foco, enviados, aberturas, cliques }]`
+- **whatsapp**: `[{ data, campanha, numeros, respostas }]`
+- **engage** (por post): `{ "<postId>": { likes, coments } }` — `postId = date|time|title`
+- **insights**: texto livre
+
+### Disparos de e-mail marketing já registrados
+| Data | Marca | Foco / Público |
+|------|-------|----------------|
+| 16/06/2026 | Action+ | Indústrias |
+| 17/06/2026 | Academia Hype | Foco total inverno |
+| 17/06/2026 | Action Films | — |
+
+> Sugestão de tabelas Supabase: `email_campaigns`, `whatsapp_blasts`, `post_engagement` (FK → posts), `report_notes`.
+
+---
+
 ## 7. Integração Supabase + GitHub (pendências para o outro Claude Code)
 
 - [ ] Criar as tabelas `clients` e `posts` no Supabase conforme seção 6.
