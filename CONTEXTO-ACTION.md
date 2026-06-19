@@ -86,14 +86,15 @@ Os dados ficam em duas arrays JavaScript dentro do `<script>` do `index.html`: *
 | 15/06/2026 | 10:55 | Academia Hype | O que acontece com seu corpo quando você se alonga? | Estático | Agendado | ✅ |
 | 15/06/2026 | 12:00 | Porcelana Schmidt | Cada detalhe, pensado em você — Coleção Esfera | Reels | Publicado | ✅ |
 | 15/06/2026 | 18:00 | Academia Hype | Super Aulão — Júnior e Fernando | Estático | Agendado | ✅ |
-| 16/06/2026 | 12:00 | Academia Hype | Avaliação Alexandre Formagio | Estático + Stories | Agendado | ✅ |
-| 17/06/2026 | 12:00 | Academia Hype | Semana da Saúde Inverno 2026 — Save the date | Estático | Agendado | — |
+| 16/06/2026 | 12:00 | Academia Hype | Avaliação Alexandre Formagio | Estático + Stories | Publicado | ✅ |
+| 17/06/2026 | 12:00 | Academia Hype | Semana da Saúde Inverno 2026 — Save the date | Estático | Publicado | — |
 | 17/06/2026 | 12:00 | Porcelana Schmidt | O inverno tem ritual — Noiva e Guaporé | Carrossel | Agendado | — |
-| 18/06/2026 | 12:00 | Academia Hype | Semana da Saúde Inverno 2026 — Programação | Carrossel | Agendado | ✅ |
+| 18/06/2026 | 12:00 | Academia Hype | Semana da Saúde Inverno 2026 — Programação | Carrossel | Publicado | ✅ |
 | 18/06/2026 | 12:00 | Porcelana Schmidt | Sabores de inverno — Coleção Guaporé | Carrossel | Agendado | ✅ |
-| 19/06/2026 | 12:00 | Academia Hype | Semana da Saúde — Você sabe quanto evoluiu? | Carrossel | Agendado | ✅ |
+| 22/06/2026 | 12:00 | Academia Hype | Semana da Saúde — Você sabe quanto evoluiu? | Carrossel | Agendado | ✅ |
 | 22/06/2026 | 12:00 | Porcelana Schmidt | Coleção Guaporé — O frio chegou | Reels | Agendado | — |
 | 23/06/2026 | 12:00 | Porcelana Schmidt | Coleção Noiva — Peças que ficam | Carrossel | Agendado | — |
+| 23/06/2026 | 12:00 | Academia Hype | Mover o corpo é uma das ferramentas mais poderosas | Estático | Agendado | — |
 
 ---
 
